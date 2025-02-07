@@ -8,10 +8,8 @@ import Image from 'next/image';
 const SinglePostPage = async ({ params }) => {
   const { id } = await params;
   const { rows: postBydId } = await fetchPostById(id);
-  console.log(postBydId);
 
   const { rows: comments } = await fetchCommentsByPostId(id);
-  console.log(comments);
 
   return (
     <div>
