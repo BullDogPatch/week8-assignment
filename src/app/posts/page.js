@@ -1,5 +1,6 @@
 import { fetchCommentsByPostId, fetchPosts } from '@/utils/api';
 import { formatDate } from '@/utils/dateFormatter';
+import { FiMessageCircle } from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,12 +16,17 @@ const PostsPage = async () => {
     <div className='max-w-md m-auto'>
       <ul className=''>
         {posts.map((post) => (
-          <li key={post.id} className='m-6 flex justify-center'>
+          <li
+            key={post.id}
+            className='m-6 flex justify-center overflow-hidden rounded-lg shadow-lg bg-gray-800 text-left'
+          >
             <Link
               href={`/posts/${post.id}`}
-              className='flex flex-col items-center gap-4 p-4 border rounded-lg shadow-md w-fit'
+              className='flex flex-col  gap-4 p-4 w-full'
             >
-              <span className='text-lg font-semibold'>{post.username}</span>
+              <p className='text-lg font-semibold text-white'>
+                {post.username}
+              </p>
 
               <Image
                 src={post.src}
@@ -30,11 +36,10 @@ const PostsPage = async () => {
                 className='w-[300px] h-[300px] object-cover rounded-md'
               />
 
-              <p className='text-gray-500'>{formatDate(post.created_at)}</p>
-
-              <p className='text-sm text-gray-700'>
-                {commentstotal(post.id)} comments
-              </p>
+              <span className='w-14 text-sm text-gray-500 rounded-xl px-2 bg-gray-900 hover:bg-gray-950 flex flex-row items-center'>
+                <FiMessageCircle className='m-1 text-lg font-extrabold' />
+                <p className='font-extrabold'>{commentstotal(post.id)}</p>
+              </span>
             </Link>
           </li>
         ))}
