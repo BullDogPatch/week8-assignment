@@ -1,5 +1,6 @@
+import Comment from '@/components/Comment';
 import DeleteForm from '@/components/DeleteForm';
-import { fetchPostById } from '@/utils/api';
+import { fetchCommentsByPostId, fetchPostById } from '@/utils/api';
 import { formatDate } from '@/utils/dateFormatter';
 import Image from 'next/image';
 
@@ -7,6 +8,9 @@ const SinglePostPage = async ({ params }) => {
   const { id } = await params;
   const { rows: postBydId } = await fetchPostById(id);
   console.log(postBydId);
+
+  const { rows: comments } = await fetchCommentsByPostId(id);
+  console.log(comments);
 
   return (
     <div>
@@ -20,6 +24,15 @@ const SinglePostPage = async ({ params }) => {
           <DeleteForm id={post.id} />
         </div>
       ))}
+      <ul className='border-2 border-red-500'>
+        {comments.length < 1 ? (
+          <p>Be the first to add a comment</p>
+        ) : (
+          comments.map((comment) => (
+            <Comment key={comment.id} comment={comment} />
+          ))
+        )}
+      </ul>
     </div>
   );
 };
