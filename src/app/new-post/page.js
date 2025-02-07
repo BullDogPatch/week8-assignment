@@ -1,23 +1,9 @@
-import { newPost } from '@/utils/api';
-import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
+import { createPost } from '@/utils/actions';
 
 const NewPostPage = async () => {
-  const handleSubmit = async (formData) => {
-    'use server';
-
-    const username = formData.get('username');
-    const heading = formData.get('heading');
-    const src = formData.get('src');
-    const content = formData.get('content');
-
-    await newPost(username, heading, content, src);
-    revalidatePath('/posts');
-    redirect('/posts');
-  };
   return (
     <div>
-      <form action={handleSubmit} className='m-auto flex flex-col w-60'>
+      <form action={createPost} className='m-auto flex flex-col w-60'>
         <label htmlFor='username'>Username:</label>
         <input
           type='text'

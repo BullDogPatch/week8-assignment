@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'The anything blog',
-  description: 'Anything goes on this blog, not decided what it is about yet.',
+  title: 'Offside',
+  description:
+    'A place for user to share there thoughts about football matches.',
 };
 
 export default function RootLayout({ children }) {
