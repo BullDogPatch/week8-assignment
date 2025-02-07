@@ -15,7 +15,8 @@ const PostsPage = async () => {
               alt={post.heading}
               width={300}
               height={300}
-              style={{ width: '300px', height: '300px' }}
+              // className='w-[300px] h-[3000px]'
+              // style={{ width: '300px', height: '300px' }}
             />
           </li>
         ))}
