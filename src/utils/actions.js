@@ -17,6 +17,18 @@ export const createPost = async (formData) => {
   redirect('/posts');
 };
 
+export const createComment = async (formData) => {
+  const id = formData.get('id');
+  const username = formData.get('username');
+  const description = formData.get('description');
+
+  await db.query(
+    `INSERT INTO comments (blog_id, username, description) VALUES ($1, $2, $3)`,
+    [id, username, description]
+  );
+  revalidatePath('/posts');
+};
+
 export const deletePost = async (formData) => {
   const id = formData.get('id');
   await db.query(`DELETE FROM blogs WHERE id = $1`, [id]);
