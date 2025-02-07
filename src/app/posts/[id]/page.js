@@ -1,3 +1,4 @@
+import AddCommentForm from '@/components/AddCommentForm';
 import Comment from '@/components/Comment';
 import DeleteForm from '@/components/DeleteForm';
 import { fetchCommentsByPostId, fetchPostById } from '@/utils/api';
@@ -24,7 +25,8 @@ const SinglePostPage = async ({ params }) => {
           <DeleteForm id={post.id} />
         </div>
       ))}
-      <ul className='border-2 border-red-500'>
+      <div className='border-2 border-red-500'>
+        <AddCommentForm id={id} />
         {comments.length < 1 ? (
           <p>Be the first to add a comment</p>
         ) : (
@@ -32,7 +34,7 @@ const SinglePostPage = async ({ params }) => {
             <Comment key={comment.id} comment={comment} />
           ))
         )}
-      </ul>
+      </div>
     </div>
   );
 };
