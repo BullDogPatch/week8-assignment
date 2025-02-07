@@ -1,12 +1,13 @@
+import DeleteForm from '@/components/DeleteForm';
 import { fetchPostById } from '@/utils/api';
 import { formatDate } from '@/utils/dateFormatter';
 import Image from 'next/image';
 
 const SinglePostPage = async ({ params }) => {
   const { id } = await params;
-  console.log(id);
   const { rows: postBydId } = await fetchPostById(id);
   console.log(postBydId);
+
   return (
     <div>
       {postBydId.map((post) => (
@@ -16,6 +17,7 @@ const SinglePostPage = async ({ params }) => {
           <Image src={post.src} alt={post.heading} width={500} height={500} />
           <p>{post.content}</p>
           <p>{formatDate(post.created_at)}</p>
+          <DeleteForm id={post.id} />
         </div>
       ))}
     </div>
