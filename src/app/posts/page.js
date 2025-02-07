@@ -1,4 +1,5 @@
 import { fetchPosts } from '@/utils/api';
+import { formatDate } from '@/utils/dateFormatter';
 import Image from 'next/image';
 
 const PostsPage = async () => {
@@ -18,6 +19,7 @@ const PostsPage = async () => {
               // className='w-[300px] h-[3000px]'
               // style={{ width: '300px', height: '300px' }}
             />
+            <p>{formatDate(post.created_at)}</p>
           </li>
         ))}
       </ul>
