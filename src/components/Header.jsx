@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header>
-      <p>Random blog title for now</p>
+      <p>OFFside (The place for all footbal content)</p>
     </header>
   );
 };
