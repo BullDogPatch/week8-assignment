@@ -14,8 +14,8 @@ const PostsPage = async ({ searchParams }) => {
 
   // Sort by title of post
   query.sort === 'desc'
-    ? posts.sort((a, b) => b.heading.localeCompare(a.heading))
-    : posts.sort((a, b) => a.heading.localeCompare(b.heading));
+    ? posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    : posts.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
 
   return (
     <div className='max-w-md m-auto'>
@@ -23,13 +23,13 @@ const PostsPage = async ({ searchParams }) => {
         href='/posts?sort=asc'
         className='m-2 px-3 py-2 text-sm bg-slate-800 rounded-md hover:bg-gray-900'
       >
-        A-Z
+        Newest first
       </Link>
       <Link
         href='/posts?sort=desc'
         className='m-2 px-3 py-2 text-sm bg-slate-800 rounded-md hover:bg-gray-900'
       >
-        Z-A
+        Oldest first
       </Link>
       <ul className=''>
         {posts.map((post) => (

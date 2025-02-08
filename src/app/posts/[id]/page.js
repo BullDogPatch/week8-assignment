@@ -17,13 +17,13 @@ const SinglePostPage = async ({ params }) => {
     <div>
       {postBydId.map((post) => (
         <div key={post.id}>
-          <h3>{post.heading}</h3>
           <p>{post.username}</p>
+          <h3>{post.heading}</h3>
           <Image src={post.src} alt={post.heading} width={500} height={500} />
           <p>{post.content}</p>
           <p>{formatDate(post.created_at)}</p>
           <DeleteForm id={post.id} />
-          <Link href={`posts/${post.id}/edit-post`}>Edit</Link>
+          <Link href={`/posts/${post.id}/edit-post`}>Edit</Link>
         </div>
       ))}
       <div className='border-2 border-red-500'>

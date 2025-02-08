@@ -35,3 +35,17 @@ export const deletePost = async (formData) => {
   revalidatePath('/posts');
   redirect('/posts');
 };
+
+export const editPost = async (formData) => {
+  const id = formData.get('id');
+  const heading = formData.get('heading');
+  const content = formData.get('content');
+  const src = formData.get('src');
+  await db.query(`UPDATE blogs SET heading = $1, content = $2, src = $3`, [
+    heading,
+    content,
+    src,
+  ]);
+  revalidatePath('/posts');
+  redirect(`/posts/${id}`);
+};
