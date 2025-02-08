@@ -4,6 +4,8 @@ import DeleteForm from '@/components/DeleteForm';
 import { fetchCommentsByPostId, fetchPostById } from '@/utils/api';
 import { formatDate } from '@/utils/dateFormatter';
 import Image from 'next/image';
+import EditPostForm from './edit-post/page';
+import Link from 'next/link';
 
 const SinglePostPage = async ({ params }) => {
   const { id } = await params;
@@ -21,6 +23,7 @@ const SinglePostPage = async ({ params }) => {
           <p>{post.content}</p>
           <p>{formatDate(post.created_at)}</p>
           <DeleteForm id={post.id} />
+          <Link href={`posts/${post.id}/edit-post`}>Edit</Link>
         </div>
       ))}
       <div className='border-2 border-red-500'>
