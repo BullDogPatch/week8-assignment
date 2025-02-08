@@ -41,11 +41,11 @@ export const editPost = async (formData) => {
   const heading = formData.get('heading');
   const content = formData.get('content');
   const src = formData.get('src');
-  await db.query(`UPDATE blogs SET heading = $1, content = $2, src = $3`, [
-    heading,
-    content,
-    src,
-  ]);
+  await db.query(
+    `UPDATE blogs SET heading = $1, content = $2, src = $3 WHERE id = $4`,
+    [heading, content, src, id]
+  );
+  revalidatePath(`/posts/${id}`);
   revalidatePath('/posts');
   redirect(`/posts/${id}`);
 };
