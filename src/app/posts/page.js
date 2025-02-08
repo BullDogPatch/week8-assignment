@@ -39,22 +39,22 @@ const PostsPage = async ({ searchParams }) => {
           >
             <Link
               href={`/posts/${post.id}`}
-              className='flex flex-col gap-4 p-4 w-full'
+              className='flex flex-col p-4 w-full'
             >
               <p className='text-sm font-bold text-slate-950 hover:underline'>
                 u/{post.username}
               </p>
-              <span className='text-lg font-semibold'>{post.heading}</span>
+              <span className='my-2 text-lg font-semibold'>{post.heading}</span>
 
               <Image
                 src={post.src}
                 alt={post.heading}
                 width={300}
                 height={300}
-                className='w-[367px] h-[350px] object-cover rounded-md'
+                className='my-2 w-[367px] h-[350px] object-cover rounded-md'
               />
 
-              <span className='w-14 text-sm text-gray-500 rounded-xl px-2 bg-gray-900 hover:bg-gray-950 flex flex-row items-center'>
+              <span className='mt-2 w-14 text-sm text-gray-500 rounded-xl px-2 bg-gray-900 hover:bg-gray-950 flex flex-row items-center'>
                 <FiMessageCircle className='m-1 text-xl font-extrabold' />
                 <p className='m-1 font-bold'>{commentstotal(post.id)}</p>
               </span>
