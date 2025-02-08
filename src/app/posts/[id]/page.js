@@ -4,8 +4,6 @@ import DeleteForm from '@/components/DeleteForm';
 import { fetchCommentsByPostId, fetchPostById } from '@/utils/api';
 import { formatDate } from '@/utils/dateFormatter';
 import Image from 'next/image';
-import EditPostForm from './edit-post/page';
-import Link from 'next/link';
 
 const SinglePostPage = async ({ params }) => {
   const { id } = await params;
