@@ -49,3 +49,20 @@ export const editPost = async (formData) => {
   revalidatePath('/posts');
   redirect(`/posts/${id}`);
 };
+
+export const editComment = async (formData) => {
+  const id = formData.get('id');
+  const description = formData.get('description');
+  const { rows } = await db.query(
+    `SELECT blog_id FROM comments WHERE id = $1`,
+    [id]
+  );
+  const blog_id = rows[0].blog_id; // chatGPT helped me with this bit
+
+  await db.query(`UPDATE comments SET description = $1 WHERE id = $2`, [
+    description,
+    id,
+  ]);
+  revalidatePath(`/posts/${blog_id}`);
+  redirect(`/posts/${blog_id}`);
+};

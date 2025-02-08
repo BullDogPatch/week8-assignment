@@ -16,3 +16,10 @@ export const fetchCommentsByPostId = async (id) => {
   ]);
   return comments;
 };
+
+export const fetchCommentByCommentId = async (comment_id) => {
+  const conmment = await db.query(`SELECT * FROM comments WHERE id = $1`, [
+    comment_id,
+  ]);
+  return conmment;
+};

@@ -1,14 +1,15 @@
-import { fetchCommentsByPostId } from '@/utils/api';
+import { editComment } from '@/utils/actions';
+import { fetchCommentByCommentId } from '@/utils/api';
 
 const EditCommentForm = async ({ params }) => {
   const { comment_id } = await params;
-  const { rows } = await fetchCommentsByPostId(comment_id);
+  const { rows } = await fetchCommentByCommentId(comment_id);
   const { description } = rows[0];
 
   return (
     <div className='flex justify-center items-center min-h-[80vh]'>
-      <form className='flex flex-col w-[400px]'>
-        <input type='hidden' />
+      <form action={editComment} className='flex flex-col w-[400px]'>
+        <input type='hidden' name='id' value={comment_id} />
         <label htmlFor='description'>Edit comment</label>
         <textarea
           name='description'
