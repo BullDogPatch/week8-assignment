@@ -31,8 +31,8 @@ const PostsPage = async ({ searchParams }) => {
               href={`/posts/${post.id}`}
               className='flex flex-col gap-4 p-4 w-full'
             >
-              <p className='text-lg font-semibold text-slate-950'>
-                {post.username}
+              <p className='text-sm font-bold text-slate-950'>
+                u/{post.username}
               </p>
               <span className='text-lg font-semibold'>{post.heading}</span>
 
