@@ -3,6 +3,7 @@ import { fetchCommentByCommentId } from '@/utils/api';
 
 const EditCommentForm = async ({ params }) => {
   const { comment_id } = await params;
+
   const { rows } = await fetchCommentByCommentId(comment_id);
   const { description } = rows[0];
 
