@@ -23,13 +23,13 @@ const PostsPage = async ({ searchParams }) => {
         href='/posts?sort=asc'
         className='m-2 px-3 py-2 text-sm bg-slate-800 rounded-md hover:bg-gray-900'
       >
-        Newest first
+        Newest
       </Link>
       <Link
         href='/posts?sort=desc'
         className='m-2 px-3 py-2 text-sm bg-slate-800 rounded-md hover:bg-gray-900'
       >
-        Oldest first
+        Oldest
       </Link>
       <ul className=''>
         {posts.map((post) => (

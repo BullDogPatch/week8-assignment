@@ -1,5 +1,6 @@
 import { editPost } from '@/utils/actions';
 import { fetchPostById } from '@/utils/api';
+import Link from 'next/link';
 
 const EditPostForm = async ({ params }) => {
   const { id } = await params;
@@ -7,6 +8,7 @@ const EditPostForm = async ({ params }) => {
   const { heading, content, src } = rows[0];
   return (
     <div>
+      <Link href={`/posts/${id}`}>Back</Link>
       <form action={editPost} className='flex flex-col '>
         <input type='hidden' name='id' value={id} />
         <input
