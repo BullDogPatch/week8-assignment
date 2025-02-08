@@ -3,7 +3,8 @@ import { FiMessageCircle } from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const PostsPage = async () => {
+const PostsPage = async ({ searchParams }) => {
+  const query = await searchParams;
   const { rows: posts } = await fetchPosts();
 
   const commentstotal = async (id) => {
@@ -11,8 +12,15 @@ const PostsPage = async () => {
     return comments.length;
   };
 
+  // Sort by title of post
+  query.sort === 'desc'
+    ? posts.sort((a, b) => b.heading.localeCompare(a.heading))
+    : posts.sort((a, b) => a.heading.localeCompare(b.heading));
+
   return (
     <div className='max-w-md m-auto'>
+      <Link href='/posts?sort=asc'>A-Z</Link>
+      <Link href='/posts?sort=desc'>Z-A</Link>
       <ul className=''>
         {posts.map((post) => (
           <li
@@ -21,11 +29,12 @@ const PostsPage = async () => {
           >
             <Link
               href={`/posts/${post.id}`}
-              className='flex flex-col  gap-4 p-4 w-full'
+              className='flex flex-col gap-4 p-4 w-full'
             >
-              <p className='text-lg font-semibold text-white'>
+              <p className='text-lg font-semibold text-slate-950'>
                 {post.username}
               </p>
+              <span className='text-lg font-semibold'>{post.heading}</span>
 
               <Image
                 src={post.src}
