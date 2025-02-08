@@ -19,8 +19,18 @@ const PostsPage = async ({ searchParams }) => {
 
   return (
     <div className='max-w-md m-auto'>
-      <Link href='/posts?sort=asc'>A-Z</Link>
-      <Link href='/posts?sort=desc'>Z-A</Link>
+      <Link
+        href='/posts?sort=asc'
+        className='m-2 px-3 py-2 text-sm bg-slate-800 rounded-md hover:bg-gray-900'
+      >
+        A-Z
+      </Link>
+      <Link
+        href='/posts?sort=desc'
+        className='m-2 px-3 py-2 text-sm bg-slate-800 rounded-md hover:bg-gray-900'
+      >
+        Z-A
+      </Link>
       <ul className=''>
         {posts.map((post) => (
           <li
