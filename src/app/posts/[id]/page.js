@@ -31,7 +31,7 @@ const SinglePostPage = async ({ params }) => {
           <p>Be the first to add a comment</p>
         ) : (
           comments.map((comment) => (
-            <Comment key={comment.id} comment={comment} />
+            <Comment key={comment.id} postId={id} comment={comment} />
           ))
         )}
       </div>
