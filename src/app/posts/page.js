@@ -1,5 +1,4 @@
 import { fetchCommentsByPostId, fetchPosts } from '@/utils/api';
-import { formatDate } from '@/utils/dateFormatter';
 import { FiMessageCircle } from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
