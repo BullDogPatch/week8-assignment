@@ -14,8 +14,8 @@ const PostsPage = async ({ searchParams }) => {
 
   // Sort by title of post
   query.sort === 'desc'
-    ? posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-    : posts.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+    ? posts.sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
+    : posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
   return (
     <div className='max-w-md m-auto'>
@@ -41,7 +41,7 @@ const PostsPage = async ({ searchParams }) => {
               href={`/posts/${post.id}`}
               className='flex flex-col gap-4 p-4 w-full'
             >
-              <p className='text-sm font-bold text-slate-950'>
+              <p className='text-sm font-bold text-slate-950 hover:underline'>
                 u/{post.username}
               </p>
               <span className='text-lg font-semibold'>{post.heading}</span>
