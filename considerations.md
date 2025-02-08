@@ -9,11 +9,11 @@ Requirements
 - Allow users to comment on individual posts in their dynamic routes. Comments should be associated with posts, and have a dynamic route (e.g. `/posts/:postid`). ✅
 - Add a redirect when a user creates a post to redirect them to the posts page. ✅
 - Have an option to sort them in ascending or descending order. (only basic asc to desc, like the one in the demo. Hope that is good enough) ✅
-
-Stretch Goals
+- MAKE SURE BACK BUTTONS ARE IMPLEMENTED(links) WHERE NEEDED, STYLE INPUTS SO USER CAN SEE COLOR OF TEXT.
+  Stretch Goals
 
 - Create an edit functionality accessible via `/posts/:id/edit`, which pre-fills a form for post data. Create a working PUT route to update the post in the database. ✅
-- Develop an edit comment feature accessible via `/posts/:id/comments/:id/edit`, which pre-fills a form for comment data. Create a working PUT route to update the comment in the database.
+- Develop an edit comment feature accessible via `/posts/:id/comments/:id/edit`, which pre-fills a form for comment data. Create a working PUT route to update the comment in the database. ✅ (chatGPT had to help me with 2 or 3 lines)
 - Style to a half decent standard.
 
 Extra
