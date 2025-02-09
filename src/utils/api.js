@@ -11,9 +11,11 @@ export const fetchPostById = async (id) => {
 };
 
 export const fetchCommentsByPostId = async (id) => {
-  const comments = await db.query(`SELECT * FROM comments WHERE blog_id = $1`, [
-    id,
-  ]);
+  const comments = await db.query(
+    `SELECT * FROM comments WHERE blog_id = $1 ORDER BY created_at DESC`,
+    [id]
+  );
+
   return comments;
 };
 

@@ -55,6 +55,7 @@ const NewPostPage = () => {
           classNames={
             'w-full p-2 text-white bg-red-600 rounded-md hover:bg-red-700 transition'
           }
+          text='submit'
         />
       </form>
     </div>
