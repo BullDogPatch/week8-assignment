@@ -1,3 +1,4 @@
+import SubmitButton from '@/components/SubmitButton';
 import { editComment } from '@/utils/actions';
 import { fetchCommentByCommentId } from '@/utils/api';
 
@@ -19,7 +20,11 @@ const EditCommentForm = async ({ params }) => {
           rows={7}
           className='text-slate-950 resize-none'
         ></textarea>
-        <button type='submit'>Submit</button>
+        <SubmitButton
+          classNames={
+            'm-auto w-[30%] p-2 text-white bg-red-600 rounded-md hover:bg-red-700 transition'
+          }
+        />
       </form>
     </div>
   );
