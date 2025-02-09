@@ -18,4 +18,4 @@ Requirements
 
 Extra
 
-- Look into `useFormState` hook from `react`, so I can get feedback as form submitting or deleting a post
+- Look into `useFormStatus` hook from `react`, so I can get feedback as form submitting or deleting a post. ✅

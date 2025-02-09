@@ -1,3 +1,4 @@
+import SubmitButton from '@/components/SubmitButton';
 import { createPost } from '@/utils/actions';
 
 const NewPostPage = () => {
@@ -50,12 +51,11 @@ const NewPostPage = () => {
           className='w-full p-2 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-red-500'
         ></textarea>
 
-        <button
-          type='submit'
-          className='w-full p-2 text-white bg-red-600 rounded-md hover:bg-red-700 transition'
-        >
-          Submit
-        </button>
+        <SubmitButton
+          classNames={
+            'w-full p-2 text-white bg-red-600 rounded-md hover:bg-red-700 transition'
+          }
+        />
       </form>
     </div>
   );
