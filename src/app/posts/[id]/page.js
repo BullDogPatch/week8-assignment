@@ -45,10 +45,10 @@ const SinglePostPage = async ({ params }) => {
           </div>
         </div>
       ))}
-      <div className='w-[100%] mx-4 md:w-[50%]'>
+      <div className='mb-7 w-[100%] mx-4 md:w-[50%]'>
         <AddCommentForm id={id} />
         {comments.length < 1 ? (
-          <p>Be the first to add a comment</p>
+          <p className='text-center'>Be the first to add a comment</p>
         ) : (
           comments.map((comment) => (
             <Comment key={comment.id} postId={id} comment={comment} />
