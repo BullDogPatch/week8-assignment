@@ -1,4 +1,5 @@
 import { createComment } from '@/utils/actions';
+import SubmitButton from './SubmitButton';
 
 const AddCommentForm = ({ id }) => {
   return (
@@ -11,7 +12,12 @@ const AddCommentForm = ({ id }) => {
           id=''
           placeholder='leave a comment here'
         ></textarea>
-        <button type='submit'>Leave comment</button>
+        <SubmitButton
+          classNames={
+            'm-auto w-[30%] p-2 text-white bg-red-600 rounded-md hover:bg-red-700 disabled:hover:bg-red-400 transition'
+          }
+          text='leave comment'
+        />
       </form>
     </div>
   );
