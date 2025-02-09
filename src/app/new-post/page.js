@@ -16,7 +16,7 @@ const NewPostPage = () => {
           name='username'
           id='username'
           placeholder='username'
-          className='w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500'
+          className='text-gray-900 w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500'
         />
 
         <label htmlFor='heading' className='text-sm font-medium'>
@@ -27,7 +27,7 @@ const NewPostPage = () => {
           name='heading'
           id='heading'
           placeholder='Enter title here'
-          className='w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500'
+          className='text-gray-900 w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500'
         />
 
         <label htmlFor='src' className='text-sm font-medium'>
@@ -38,7 +38,7 @@ const NewPostPage = () => {
           name='src'
           id='src'
           placeholder='www.example.com'
-          className='w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500'
+          className='text-gray-900 w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500'
         />
 
         <label htmlFor='content' className='text-sm font-medium'>
@@ -48,7 +48,7 @@ const NewPostPage = () => {
           name='content'
           id='content'
           rows={7}
-          className='w-full p-2 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-red-500'
+          className='text-gray-900 w-full p-2 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-red-500'
         ></textarea>
 
         <SubmitButton
