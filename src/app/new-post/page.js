@@ -1,6 +1,11 @@
 import SubmitButton from '@/components/SubmitButton';
 import { createPost } from '@/utils/actions';
 
+export const metadata = {
+  title: 'New Post',
+  description: 'Edit a post.',
+};
+
 const NewPostPage = () => {
   return (
     <div className='flex items-center justify-center min-h-screen p-4'>

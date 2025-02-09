@@ -3,6 +3,13 @@ import { editComment } from '@/utils/actions';
 import { fetchCommentByCommentId } from '@/utils/api';
 import Link from 'next/link';
 
+export async function generateMetadata({ params }) {
+  const { comment_id } = await params;
+  return {
+    title: `Edit comment id ${comment_id}`,
+  };
+}
+
 const EditCommentForm = async ({ params }) => {
   const { id, comment_id } = await params;
 

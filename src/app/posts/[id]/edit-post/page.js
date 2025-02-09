@@ -3,6 +3,13 @@ import { editPost } from '@/utils/actions';
 import { fetchPostById } from '@/utils/api';
 import Link from 'next/link';
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  return {
+    title: `Edit post id ${id}`,
+  };
+}
+
 const EditPostForm = async ({ params }) => {
   const { id } = await params;
   const { rows } = await fetchPostById(id);

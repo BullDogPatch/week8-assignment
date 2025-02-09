@@ -6,6 +6,15 @@ import { formatDate } from '@/utils/dateFormatter';
 import Image from 'next/image';
 import Link from 'next/link';
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const { rows } = await fetchPostById(id);
+  const { heading } = rows[0];
+  return {
+    title: `${heading}`,
+  };
+}
+
 const SinglePostPage = async ({ params }) => {
   const { id } = await params;
   const { rows: postBydId } = await fetchPostById(id);
