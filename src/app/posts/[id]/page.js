@@ -13,11 +13,11 @@ const SinglePostPage = async ({ params }) => {
   const { rows: comments } = await fetchCommentsByPostId(id);
 
   return (
-    <div className='w-full m-auto flex flex-col justify-center items-center'>
+    <div className='m-auto flex flex-col justify-center items-center'>
       {postBydId.map((post) => (
         <div
           key={post.id}
-          className='mb-4 p-5 flex flex-col gap-2 m-auto w-[50%] rounded-md border-2 border-red-400'
+          className='mx-3 p-5 flex flex-col gap-2 w-[100%] rounded-md sm:mx-4 md:w-[50%] lg:'
         >
           <p className='text-sm font-bold text-slate-600 hover:underline'>
             u/{post.username}
@@ -28,7 +28,7 @@ const SinglePostPage = async ({ params }) => {
             alt={post.heading}
             width={500}
             height={500}
-            className='rounded-lg'
+            className='w-[100%] rounded-lg'
           />
           <p>{post.content}</p>
           <p className='text-gray-500 text-sm font-bold'>
@@ -45,7 +45,7 @@ const SinglePostPage = async ({ params }) => {
           </div>
         </div>
       ))}
-      <div className='w-[50%]'>
+      <div className='mx-4 md:w-[50%]'>
         <AddCommentForm id={id} />
         {comments.length < 1 ? (
           <p>Be the first to add a comment</p>
