@@ -13,19 +13,39 @@ const SinglePostPage = async ({ params }) => {
   const { rows: comments } = await fetchCommentsByPostId(id);
 
   return (
-    <div>
+    <div className='m-auto flex flex-col justify-center items-center'>
       {postBydId.map((post) => (
-        <div key={post.id}>
-          <p>{post.username}</p>
+        <div
+          key={post.id}
+          className='mx-3 p-5 flex flex-col gap-2 w-[100%] rounded-md sm:mx-4 md:w-[50%] lg:'
+        >
+          <p className='text-sm font-bold text-slate-600 hover:underline'>
+            u/{post.username}
+          </p>
           <h3>{post.heading}</h3>
-          <Image src={post.src} alt={post.heading} width={500} height={500} />
+          <Image
+            src={post.src}
+            alt={post.heading}
+            width={500}
+            height={500}
+            className='w-[100%] rounded-lg'
+          />
           <p>{post.content}</p>
-          <p>{formatDate(post.created_at)}</p>
-          <DeleteForm id={post.id} />
-          <Link href={`/posts/${post.id}/edit-post`}>Edit</Link>
+          <p className='text-gray-500 text-sm font-bold'>
+            {formatDate(post.created_at)}
+          </p>
+          <div className='m-auto flex justify-center items-center'>
+            <DeleteForm id={post.id} />
+            <Link
+              href={`/posts/${post.id}/edit-post`}
+              className='text-center w-[100px] m-1 p-1 bg-green-600 rounded-lg hover:bg-green-800'
+            >
+              Edit
+            </Link>
+          </div>
         </div>
       ))}
-      <div className='border-2 border-red-500'>
+      <div className='mx-4 md:w-[50%]'>
         <AddCommentForm id={id} />
         {comments.length < 1 ? (
           <p>Be the first to add a comment</p>
