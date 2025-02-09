@@ -60,3 +60,6 @@ I also made a reusable `SubmitButton` so that I could use react's `useFormStatus
 I feel like I could have somehow reused the Post component to make SinglePostPage but the SinglePostPage has a few more of details on it and different colours and at the time I couldnt figure out how to do it, please let me know if the is a way, I feel it would be having optional props if that is a thing.
 
 Look forward to the feeback and what improvements could be made.
+
+MY IMAGES OR ONLY SET UP FOR GETTY IMAGES LIKE THIS
+https://media.gettyimages.com/id/2198242368/photo/manchester-england-harry-maguire-of-manchester-united-celebrates-scoring-his-teams-second.jpg?s=612x612&w=0&k=20&c=jQ1trJ3_RPXQzc3CfeMpQ5RR_Puw4gIk6VwZIgz7ZoI=
