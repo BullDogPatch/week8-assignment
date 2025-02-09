@@ -7,7 +7,7 @@ const DeleteButton = () => {
     <button
       type='submit'
       disabled={pending}
-      className='w-[100px] m-2 p-1 bg-red-600 rounded-lg hover:bg-red-800'
+      className='w-[100px] m-1 p-1 bg-red-600 rounded-lg hover:bg-red-800'
     >
       {pending ? 'Deleting...' : 'Delete'}
     </button>

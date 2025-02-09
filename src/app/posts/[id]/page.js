@@ -34,7 +34,7 @@ const SinglePostPage = async ({ params }) => {
             <DeleteForm id={post.id} />
             <Link
               href={`/posts/${post.id}/edit-post`}
-              className='text-center w-[100px] m-2 p-1 bg-green-600 rounded-lg hover:bg-green-800'
+              className='text-center w-[100px] m-1 p-1 bg-green-600 rounded-lg hover:bg-green-800'
             >
               Edit
             </Link>
