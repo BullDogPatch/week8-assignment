@@ -45,7 +45,7 @@ const SinglePostPage = async ({ params }) => {
           </div>
         </div>
       ))}
-      <div className='mx-4 md:w-[50%]'>
+      <div className='w-[100%] mx-4 md:w-[50%]'>
         <AddCommentForm id={id} />
         {comments.length < 1 ? (
           <p>Be the first to add a comment</p>
