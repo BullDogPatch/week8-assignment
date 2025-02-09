@@ -6,11 +6,18 @@ const AddCommentForm = ({ id }) => {
     <div>
       <form action={createComment} className='mb-4 flex flex-col'>
         <input type='hidden' name='id' value={id} required />
-        <input type='text' name='username' placeholder='username' required />
+        <input
+          type='text'
+          name='username'
+          placeholder='username'
+          required
+          className='mt-2 p-2 rounded-sm'
+        />
         <textarea
           name='description'
           id=''
           placeholder='leave a comment here'
+          className='mt-2 p-2 resize-none rounded-sm'
         ></textarea>
         <SubmitButton
           classNames={
