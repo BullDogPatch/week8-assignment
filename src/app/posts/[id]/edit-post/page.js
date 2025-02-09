@@ -10,7 +10,7 @@ const EditPostForm = async ({ params }) => {
 
   return (
     <div className='flex justify-center items-center min-h-[80vh] p-6'>
-      <div className='w-full max-w-lg p-6 rounded-lg shadow-lg'>
+      <div className='w-full max-w-lg p-6'>
         <Link
           href={`/posts/${id}`}
           className='text-blue-500 hover:underline mb-4 block'
