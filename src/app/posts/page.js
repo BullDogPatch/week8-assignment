@@ -7,7 +7,7 @@ const PostsPage = async ({ searchParams }) => {
   const query = await searchParams;
   const { rows: posts } = await fetchPosts();
 
-  // Sort by title of post
+  // Sort by date of post
   query.sort === 'desc'
     ? posts.sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
     : posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));

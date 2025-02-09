@@ -34,7 +34,7 @@ const SinglePostPage = async ({ params }) => {
           <p className='text-gray-500 text-sm font-bold'>
             {formatDate(post.created_at)}
           </p>
-          <div className='m-auto flex justify-center items-center'>
+          <div className='flex justify-center items-center'>
             <DeleteForm id={post.id} />
             <Link
               href={`/posts/${post.id}/edit-post`}
