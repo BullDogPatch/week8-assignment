@@ -17,9 +17,11 @@ const SinglePostPage = async ({ params }) => {
       {postBydId.map((post) => (
         <div
           key={post.id}
-          className='mb-4 flex flex-col gap-2 m-auto w-[50%] border border-red-400'
+          className='mb-4 p-5 flex flex-col gap-2 m-auto w-[50%] rounded-md border-2 border-red-400'
         >
-          <p>{post.username}</p>
+          <p className='text-sm font-bold text-slate-600 hover:underline'>
+            u/{post.username}
+          </p>
           <h3>{post.heading}</h3>
           <Image
             src={post.src}
@@ -29,7 +31,9 @@ const SinglePostPage = async ({ params }) => {
             className='rounded-lg'
           />
           <p>{post.content}</p>
-          <p>{formatDate(post.created_at)}</p>
+          <p className='text-gray-500 text-sm font-bold'>
+            {formatDate(post.created_at)}
+          </p>
           <div className='m-auto flex justify-center items-center'>
             <DeleteForm id={post.id} />
             <Link
@@ -41,7 +45,7 @@ const SinglePostPage = async ({ params }) => {
           </div>
         </div>
       ))}
-      <div className='w-[50%] border-2 border-red-500'>
+      <div className='w-[50%]'>
         <AddCommentForm id={id} />
         {comments.length < 1 ? (
           <p>Be the first to add a comment</p>

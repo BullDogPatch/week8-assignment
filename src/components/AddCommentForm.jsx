@@ -11,13 +11,13 @@ const AddCommentForm = ({ id }) => {
           name='username'
           placeholder='username'
           required
-          className='mt-2 p-2 rounded-sm'
+          className='text-gray-900 mt-2 p-2 rounded-sm'
         />
         <textarea
           name='description'
           id=''
           placeholder='leave a comment here'
-          className='mt-2 p-2 resize-none rounded-sm'
+          className='mb-4 text-gray-900 mt-2 p-2 resize-none rounded-sm'
         ></textarea>
         <SubmitButton
           classNames={
