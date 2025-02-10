@@ -21,6 +21,7 @@ const NewPostPage = () => {
           name='username'
           id='username'
           placeholder='username'
+          required
           className='text-gray-900 w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500'
         />
 
@@ -33,6 +34,7 @@ const NewPostPage = () => {
           id='heading'
           placeholder='Enter title here'
           className='text-gray-900 w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500'
+          required
         />
 
         <label htmlFor='src' className='text-sm font-medium'>
@@ -44,6 +46,7 @@ const NewPostPage = () => {
           id='src'
           placeholder='www.example.com'
           className='text-gray-900 w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500'
+          required
         />
 
         <label htmlFor='content' className='text-sm font-medium'>
@@ -54,6 +57,7 @@ const NewPostPage = () => {
           id='content'
           rows={7}
           className='text-gray-900 w-full p-2 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-red-500'
+          required
         ></textarea>
 
         <SubmitButton
